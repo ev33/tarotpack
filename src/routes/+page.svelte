@@ -1,10 +1,16 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+	import S1Banner from './S1Banner.svelte';
+</script>
+
+<div id="introPage">
+	<S1Banner />
+</div>
 
 <style>
-	p,
-	h1 {
-		/* padding: 20px; */
-		height: 200vh;
+	#introPage {
+		padding-top: 58px;
+		min-height: calc(100vh - 179.59px);
+		height: 1500px;
+		background-color: rgb(241, 241, 241);
 	}
 </style>

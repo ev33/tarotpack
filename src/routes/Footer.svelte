@@ -10,15 +10,14 @@
 
 <style>
 	footer {
-		background-color: rgb(251, 251, 251);
-		color: rgb(150, 150, 150);
+		background-color: white;
+		color: rgb(170, 170, 170);
 		line-height: 1.6;
 		padding: 30px 20px 60px 20px;
 	}
 
 	#copyright {
 		font-size: var(--font-size-1);
-		font-weight: 600;
 	}
 
 	ul {
