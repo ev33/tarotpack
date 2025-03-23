@@ -37,5 +37,6 @@
 		justify-content: space-between;
 		align-items: center;
 		border-bottom: 1px solid rgb(236, 236, 236);
+		z-index: 1;
 	}
 </style>

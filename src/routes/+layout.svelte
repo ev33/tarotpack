@@ -5,11 +5,15 @@
 	import '../app.css';
 	import Menu from './Menu.svelte';
 	import { writable } from 'svelte/store';
+	import { onMount } from 'svelte';
 
 	let isMenuOpen = writable(false);
-	$: {
-		document.body.style.overflow = $isMenuOpen ? 'hidden' : '';
-	}
+
+	onMount(() => {
+		isMenuOpen.subscribe((value) => {
+			document.body.style.overflow = value ? 'hidden' : '';
+		});
+	});
 </script>
 
 <main>
