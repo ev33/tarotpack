@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css');
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo.css');
 @font-face {
 	font-family: 'PyeongChangPeace-Bold';
 	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2')
@@ -20,14 +20,13 @@
 
 html {
 	font-family:
+		'Apple SD Gothic Neo',
 		-apple-system,
 		BlinkMacSystemFont,
-		Pretendard Variable,
 		Segoe UI,
 		Roboto,
 		Helvetica Neue,
 		Arial,
-		Noto Sans,
 		sans-serif,
 		'Apple Color Emoji',
 		'Segoe UI Emoji',

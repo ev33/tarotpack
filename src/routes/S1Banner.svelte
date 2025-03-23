@@ -1,5 +1,5 @@
 <div id="S1Banner">
-	<div class="title">매일 타로팩을 뜯어<br />점치는 특별한 운세</div>
+	<div class="title">매일 타로팩으로<br />점치는 특별한 운세</div>
 	<div id="buttons">
 		<button id="leftButton">타로팩 체험하기</button><button id="rightButton">지금 시작하기</button>
 	</div>
@@ -48,7 +48,7 @@
 		width: calc(50% - 6px);
 		height: 50px;
 		border-radius: 8px;
-		font-size: 18px;
+		font-size: 16px;
 		font-weight: 500;
 		box-shadow: rgba(140, 9, 9, 0.2) 0px 2px 14px;
 	}
