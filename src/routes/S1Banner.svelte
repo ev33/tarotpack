@@ -20,6 +20,7 @@
 		font-size: 44px;
 		font-weight: 500;
 		margin-bottom: 30px;
+		font-family: PyeongChangPeace-Bold;
 	}
 
 	#mockup {
