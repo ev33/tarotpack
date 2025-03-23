@@ -1,6 +1,29 @@
+<script lang="ts">
+	import { goto } from '$app/navigation';
+	import type { Writable } from 'svelte/store';
+
+	export let isMenuOpen: Writable<boolean>;
+
+	function toggleMenu() {
+		isMenuOpen.update((value) => !value);
+	}
+
+	function goToRootPage() {
+		if (window.location.pathname !== '/') {
+			goto('/', { noScroll: true });
+		} else {
+			scrollToTop();
+		}
+	}
+
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
+</script>
+
 <header>
-	<button>로고</button>
-	<button>햄버거</button>
+	<button on:click={goToRootPage}>로고</button>
+	<button on:click={toggleMenu}>햄버거</button>
 </header>
 
 <style>
@@ -10,7 +33,6 @@
 		height: 52px;
 		background-color: white;
 		padding: 20px;
-		margin: auto;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

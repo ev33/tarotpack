@@ -32,6 +32,7 @@ html {
 		'Segoe UI Emoji',
 		Segoe UI Symbol,
 		'Noto Color Emoji';
+	scrollbar-gutter: stable;
 }
 
 *,
@@ -67,4 +68,5 @@ button {
 	background: transparent;
 	cursor: pointer;
 	color: #1f1f1f;
+	font-size: 16px;
 }
