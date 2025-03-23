@@ -1,13 +1,16 @@
 <div id="S1Banner">
 	<div class="title">매일 타로팩을 뜯어<br />점치는 특별한 운세</div>
+	<div id="buttons">
+		<button id="leftButton">타로팩 체험하기</button><button id="rightButton">지금 시작하기</button>
+	</div>
 	<div id="mockup">모바일 기기 목업이 들어갈 곳이에요</div>
 </div>
 
 <style>
 	#S1Banner {
-		height: 500px;
+		height: 600px;
 		padding: 100px 0px 50px 0px;
-		background-image: linear-gradient(to top, rgb(237, 126, 126), rgb(205, 16, 51));
+		background-image: linear-gradient(to top, rgb(236, 106, 106), rgb(205, 16, 51));
 		color: rgb(255, 255, 255);
 		overflow: hidden;
 	}
@@ -16,6 +19,7 @@
 		text-align: center;
 		font-size: 44px;
 		font-weight: 500;
+		margin-bottom: 30px;
 	}
 
 	#mockup {
@@ -24,8 +28,36 @@
 		width: calc(100% - 40px);
 		height: 300px;
 		background-color: rgba(255, 255, 255, 0.04);
-		transform: translateY(60px);
+		transform: translateY(30px);
 		text-align: center;
 		color: rgba(255, 255, 255, 0.5);
+	}
+
+	#buttons {
+		padding-right: 20px;
+		padding-left: 20px;
+		width: min(400px, 100%);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: auto;
+	}
+
+	button {
+		width: calc(50% - 6px);
+		height: 50px;
+		border-radius: 8px;
+		font-size: 18px;
+		font-weight: 500;
+		box-shadow: rgba(140, 9, 9, 0.2) 0px 2px 14px;
+	}
+
+	#leftButton {
+		background-color: white;
+	}
+
+	#rightButton {
+		background-color: rgb(47, 9, 9);
+		color: white;
 	}
 </style>

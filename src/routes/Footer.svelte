@@ -1,11 +1,11 @@
 <footer>
 	<ul>
-		<li><span>(주)회사회사</span> 대표 김대표</li>
+		<li><span>타로팩</span> 대표 김대표</li>
 		<li><span>사업자등록번호</span> 123-45-67890</li>
 		<li><span>통신판매업신고번호</span> 제2025-대한민국-1234호</li>
 		<li><span>주소</span> 서울특별시 어디구 어디동 123 1층</li>
 	</ul>
-	<span id="copyright">ⓒ Companycompany. Inc All rights reserved.</span>
+	<span id="copyright">ⓒ Tarotpack. All rights reserved.</span>
 </footer>
 
 <style>
