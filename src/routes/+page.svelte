@@ -8,7 +8,7 @@
 
 <style>
 	#introPage {
-		padding-top: 58px;
+		padding-top: 52px;
 		min-height: calc(100vh - 179.59px);
 		height: 1500px;
 		background-color: rgb(244, 244, 244);

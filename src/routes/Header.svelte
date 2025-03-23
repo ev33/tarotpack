@@ -7,7 +7,7 @@
 	header {
 		position: fixed;
 		width: min(100%, 600px);
-		height: 58px;
+		height: 52px;
 		background-color: white;
 		padding: 20px;
 		margin: auto;
