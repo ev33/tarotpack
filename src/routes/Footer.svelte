@@ -13,7 +13,7 @@
 		background-color: white;
 		color: rgb(170, 170, 170);
 		line-height: 1.6;
-		padding: 30px 20px 60px 20px;
+		padding: 30px 20px 30px 20px;
 	}
 
 	#copyright {
