@@ -1,17 +1,24 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
+	import { goto } from "$app/navigation";
 
-	function goToRootPage() {
-		goto('/event', { noScroll: true });
+	function goToPage(page: string) {
+		goto("/" + page, { noScroll: true });
 	}
 </script>
 
 <div id="S1Banner">
 	<div class="title">매일 타로팩으로<br />점치는 특별한 운세</div>
 	<div id="buttons">
-		<button id="leftButton" on:click={goToRootPage}>타로팩 체험하기</button><button
+		<button
+			id="leftButton"
+			on:click={() => {
+				goToPage("sample");
+			}}>타로팩 체험하기</button
+		><button
 			id="rightButton"
-			on:click={goToRootPage}>지금 시작하기</button
+			on:click={() => {
+				goToPage("subscribe");
+			}}>지금 시작하기</button
 		>
 	</div>
 	<div id="mockup">모바일 기기 목업이 들어갈 곳이에요</div>

@@ -3,8 +3,11 @@
 	import type { Writable } from "svelte/store";
 	import Icon from "@iconify/svelte";
 	import { goto } from "$app/navigation";
+	import { backIn } from "svelte/easing";
 
 	export let isMenuOpen: Writable<boolean>;
+	let isShowMailCopied: boolean = false;
+	let mailCopiedTimeoutID: number | null = null;
 
 	function toggleMenu() {
 		isMenuOpen.update((value) => !value);
@@ -17,6 +20,36 @@
 			goto("/" + target, { noScroll: true });
 		} else {
 			window.scrollTo({ top: 0, behavior: "smooth" });
+		}
+	}
+
+	function showMailCopied() {
+		if (mailCopiedTimeoutID) {
+			clearTimeout(mailCopiedTimeoutID);
+		} else {
+			isShowMailCopied = true;
+		}
+		mailCopiedTimeoutID = setTimeout(() => {
+			isShowMailCopied = false;
+			mailCopiedTimeoutID = null;
+		}, 600);
+	}
+
+	function copyMail() {
+		const textToCopy = "cs@tarotpack.com";
+
+		if (navigator.clipboard) {
+			navigator.clipboard.writeText(textToCopy).then(() => {
+				showMailCopied();
+			});
+		} else {
+			const textarea = document.createElement("textarea");
+			textarea.value = textToCopy;
+			document.body.appendChild(textarea);
+			textarea.select();
+			document.execCommand("copy");
+			document.body.removeChild(textarea);
+			showMailCopied();
 		}
 	}
 </script>
@@ -32,11 +65,21 @@
 				class="menuItem"
 				on:click={() => {
 					onClickItem("");
-				}}>홈</button
+				}}>서비스 소개</button
 			>
 			<hr />
-			<button class="menuItem">구독하기</button>
-			<button class="menuItem">무료 체험</button>
+			<button
+				class="menuItem"
+				on:click={() => {
+					onClickItem("subscribe");
+				}}>구독하기</button
+			>
+			<button
+				class="menuItem"
+				on:click={() => {
+					onClickItem("sample");
+				}}>무료 체험</button
+			>
 			<hr />
 			<button
 				class="menuItem"
@@ -44,9 +87,22 @@
 					onClickItem("event");
 				}}>이벤트</button
 			>
-			<button class="menuItem">자주 묻는 질문</button>
-			<button class="menuItem">고객센터</button>
+			<!-- <button
+				class="menuItem"
+				on:click={() => {
+					onClickItem("qna");
+				}}>자주 묻는 질문</button
+			> -->
+			<button class="menuItem" on:click={copyMail}>고객센터</button>
 		</div>
+	</div>
+{/if}
+
+{#if isShowMailCopied}
+	<div id="mailCopied" in:fade={{ duration: 50 }} out:fade={{ duration: 1000, easing: backIn }}>
+		타로팩 이메일 주소를 복사했어요<br />
+		문의할 내용을 보내주시면 빠르게 답변해드릴게요<br />
+		cs@tarotpack.com
 	</div>
 {/if}
 
@@ -90,7 +146,7 @@
 		display: flex;
 		align-items: center;
 		padding-left: 20px;
-		color: #282828;
+		color: #414141;
 		font-weight: 500;
 		cursor: pointer;
 	}
@@ -111,5 +167,22 @@
 		height: 1px;
 		border: 0;
 		background: rgb(236, 236, 236);
+	}
+
+	#mailCopied {
+		width: calc(min(100%, 600px) - 40px);
+		margin: 20px;
+		height: 100px;
+		bottom: 50px;
+		position: fixed;
+		z-index: 9000;
+		background-color: rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 2px 6px rgba(62, 0, 0, 0.04);
+		border-radius: 10px;
+		color: white;
+		font-size: 14px;
+		text-align: center;
+		padding-top: 17px;
+		line-height: 22px;
 	}
 </style>
