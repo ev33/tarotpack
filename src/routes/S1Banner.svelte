@@ -2,7 +2,7 @@
 	import { goto } from "$app/navigation";
 
 	function goToPage(page: string) {
-		goto("/" + page, { noScroll: true });
+		goto("/" + page);
 	}
 </script>
 

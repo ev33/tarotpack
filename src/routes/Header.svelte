@@ -11,7 +11,7 @@
 
 	function goToRootPage() {
 		if (window.location.pathname !== "/") {
-			goto("/", { noScroll: true });
+			goto("/");
 		} else {
 			window.scrollTo({ top: 0, behavior: "smooth" });
 		}

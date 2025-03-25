@@ -7,7 +7,7 @@
 
 	export let isMenuOpen: Writable<boolean>;
 	let isShowMailCopied: boolean = false;
-	let mailCopiedTimeoutID: number | null = null;
+	let mailCopiedTimeoutID: ReturnType<typeof setTimeout> | null = null;
 
 	function toggleMenu() {
 		isMenuOpen.update((value) => !value);
@@ -17,7 +17,7 @@
 		toggleMenu();
 
 		if (window.location.pathname !== "/" + target) {
-			goto("/" + target, { noScroll: true });
+			goto("/" + target);
 		} else {
 			window.scrollTo({ top: 0, behavior: "smooth" });
 		}
@@ -72,7 +72,7 @@
 				class="menuItem"
 				on:click={() => {
 					onClickItem("subscribe");
-				}}>구독하기</button
+				}}>시작하기</button
 			>
 			<button
 				class="menuItem"
@@ -87,13 +87,13 @@
 					onClickItem("event");
 				}}>이벤트</button
 			>
-			<!-- <button
+			<button
 				class="menuItem"
 				on:click={() => {
-					onClickItem("qna");
+					onClickItem("faq");
 				}}>자주 묻는 질문</button
-			> -->
-			<button class="menuItem" on:click={copyMail}>고객센터</button>
+			>
+			<button class="menuItem" on:click={copyMail}>문의하기</button>
 		</div>
 	</div>
 {/if}
@@ -146,7 +146,7 @@
 		display: flex;
 		align-items: center;
 		padding-left: 20px;
-		color: #414141;
+		color: #363636;
 		font-weight: 500;
 		cursor: pointer;
 	}
