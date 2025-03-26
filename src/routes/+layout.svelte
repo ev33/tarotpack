@@ -6,6 +6,7 @@
 	import Menu from "./Menu.svelte";
 	import { writable } from "svelte/store";
 	import { onMount } from "svelte";
+	import { page } from "$app/stores";
 
 	let isMenuOpen = writable(false);
 
@@ -19,10 +20,12 @@
 <main>
 	<Menu {isMenuOpen} />
 	<Header {isMenuOpen} />
-	<TopButton />
 	<div id="headerBlock"></div>
 	<slot />
-	<Footer />
+	{#if $page.url.pathname.startsWith("/event/") === false}
+		<TopButton />
+		<Footer />
+	{/if}
 </main>
 
 <style>

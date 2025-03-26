@@ -3,13 +3,10 @@
 	import event1 from "$lib/assets/event1.png";
 	import event2 from "$lib/assets/event2.png";
 	import event3 from "$lib/assets/event3.png";
+	import Icon from "@iconify/svelte";
 
-	function onClickItem(target: string) {
-		if (window.location.pathname !== "/event/" + target) {
-			goto("/" + target);
-		} else {
-			window.scrollTo({ top: 0, behavior: "smooth" });
-		}
+	function goToPage(target: string) {
+		goto("/event/" + target);
 	}
 </script>
 
@@ -18,11 +15,15 @@
 	<button
 		class="eventItem"
 		on:click={() => {
-			onClickItem("reservation");
+			goToPage("temp");
 		}}
 	>
 		<img alt="1+1 타로팩 사전예약 이벤트" src={event3} />
 		<div class="eventTitle">
+			<Icon
+				style="font-size: 22px; vertical-align: -4px; color: rgb(200, 200, 200); margin-right:2px"
+				icon="tabler:speakerphone"
+			/>
 			1+1 타로팩 사전예약 이벤트
 			<div class="newIcon">new</div>
 		</div>
@@ -32,29 +33,39 @@
 	<button
 		class="eventItem"
 		on:click={() => {
-			onClickItem("reservation");
+			goToPage("temp");
 		}}
 	>
 		<img alt="지금 타로팩은 개발 중" src={event2} />
-		<div class="eventTitle">지금 타로팩은 개발 중</div>
+		<div class="eventTitle">
+			<Icon
+				style="font-size: 22px; vertical-align: -4px; color: rgb(200, 200, 200); margin-right: 6px"
+				icon="tabler:speakerphone"
+			/>지금 타로팩은 개발 중
+		</div>
 		<div class="date">2025.03.22 ~ 2025.04.15</div>
 	</button>
 
 	<button
 		class="eventItem"
 		on:click={() => {
-			onClickItem("reservation");
+			goToPage("temp");
 		}}
 	>
 		<img alt="첫 번째 이벤트" src={event1} />
-		<div class="eventTitle">첫 번째 이벤트</div>
+		<div class="eventTitle">
+			<Icon
+				style="font-size: 22px; vertical-align: -4px; color: rgb(200, 200, 200); margin-right: 6px"
+				icon="tabler:speakerphone"
+			/>첫 번째 이벤트
+		</div>
 		<div class="date">2024.01.01 ~ 2024.12.31</div>
 	</button>
 </div>
 
 <style>
 	#eventPage {
-		padding: 20px;
+		padding: 20px 20px 0px 20px;
 	}
 
 	#title {
@@ -67,6 +78,10 @@
 		text-align: left;
 	}
 
+	/* .noticeIcon {
+		color:
+	} */
+
 	img {
 		width: 100%;
 	}
@@ -75,31 +90,31 @@
 		width: 100%;
 		font-size: 16px;
 		font-weight: 600;
-		margin-top: 10px;
+		margin-top: 4px;
 		margin-bottom: 4px;
 	}
 
 	.date {
 		font-size: 12px;
-		color: rgb(135, 135, 135);
-		margin-bottom: 40px;
+		color: rgb(170, 170, 170);
+		margin-bottom: 30px;
 	}
 
 	.newIcon {
-		width: 30px;
-		height: 16px;
+		width: 28px;
+		height: 15px;
 		background-color: rgb(252, 56, 92);
 		display: inline-block;
 		font-size: 10px;
 		text-align: center;
 		border-radius: 5px;
-		padding-top: 2px;
+		padding-bottom: 1px;
 		color: rgb(255, 255, 255);
 		font-weight: 600;
 		transform: translateY(-8px);
-		-webkit-transform: translateY(-3px);
-		-moz-transform: translateY(-2px);
+		-webkit-transform: translateY(-2px);
+		-moz-transform: translateY(-10px);
 		-ms-transform: translateY(-2px);
-		-o-transform: translateY(-2px);
+		-o-transform: translateY(-1px);
 	}
 </style>
