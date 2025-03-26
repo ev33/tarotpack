@@ -101,7 +101,7 @@
 {#if isShowMailCopied}
 	<div id="mailCopied" in:fade={{ duration: 50 }} out:fade={{ duration: 1000, easing: backIn }}>
 		타로팩 이메일 주소를 복사했어요<br />
-		문의할 내용을 보내주시면 빠르게 답변해드릴게요<br />
+		문의 내용을 보내주시면 빠르게 답변해드릴게요<br />
 		cs@tarotpack.com
 	</div>
 {/if}
@@ -141,12 +141,12 @@
 
 	.menuItem {
 		width: 100%;
-		height: 40px;
+		height: 42px;
 		font-size: 18px;
 		display: flex;
 		align-items: center;
 		padding-left: 20px;
-		color: #363636;
+		color: #2f2f2f;
 		font-weight: 500;
 		cursor: pointer;
 	}
