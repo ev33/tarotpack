@@ -94,6 +94,12 @@
 				}}>자주 묻는 질문</button
 			>
 			<button class="menuItem" on:click={copyMail}>문의하기</button>
+			<!-- svelte-ignore a11y_click_events_have_key_events -->
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<div id="policy">
+				<span class="textButton" on:click={() => {}}>서비스 약관</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<span class="textButton" on:click={() => {}}>개인정보처리방침</span>
+			</div>
 		</div>
 	</div>
 {/if}
@@ -109,6 +115,10 @@
 <style>
 	::-webkit-scrollbar {
 		display: none;
+	}
+
+	.textButton {
+		cursor: pointer;
 	}
 
 	#fixedMenu {
@@ -184,5 +194,13 @@
 		text-align: center;
 		padding-top: 17px;
 		line-height: 22px;
+	}
+
+	#policy {
+		margin-top: 20px;
+		font-size: 10px;
+		margin-left: 20px;
+		color: rgb(170, 170, 170);
+		font-weight: 500;
 	}
 </style>

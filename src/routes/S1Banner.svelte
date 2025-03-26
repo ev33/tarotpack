@@ -27,7 +27,7 @@
 <style>
 	#S1Banner {
 		height: 600px;
-		padding: 100px 0px 50px 0px;
+		padding: 16% 0px 50px 0px;
 		background-image: linear-gradient(to top, rgb(236, 106, 106), rgb(205, 16, 51));
 		color: rgb(255, 255, 255);
 		overflow: hidden;
