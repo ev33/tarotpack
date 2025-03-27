@@ -9,6 +9,7 @@
 </script>
 
 <div id="S1Banner">
+	<div class="title">매일 타로팩으로<br />점치는 특별한 운세</div>
 	<Marquee fade={true}>
 		<div class="tarotCard"></div>
 		<div class="tarotCard"></div>
@@ -23,7 +24,7 @@
 		<div class="tarotCard"></div>
 		<div class="tarotCard"></div>
 	</Marquee>
-	<div class="title">매일 타로팩으로<br />점치는 특별한 운세</div>
+
 	<div id="buttons">
 		<button
 			id="leftButton"
@@ -53,7 +54,7 @@
 		width: 70px;
 		height: 120px;
 		background-color: rgba(0, 0, 0, 0.05);
-		margin: 20px 6px 30px 6px;
+		margin: 40px 6px 50px 6px;
 		box-shadow: rgba(255, 242, 102, 0.483) 0px 0px 20px;
 		bottom: 0;
 	}
@@ -62,7 +63,6 @@
 		text-align: center;
 		font-size: 44px;
 		font-weight: 500;
-		margin-bottom: 30px;
 		font-family: PyeongChangPeace-Bold;
 	}
 
