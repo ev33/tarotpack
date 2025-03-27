@@ -22,9 +22,10 @@
 
 	ul {
 		font-size: var(--font-size-1);
+		font-weight: 300;
 	}
 
 	li span {
-		font-weight: 600;
+		font-weight: 500;
 	}
 </style>

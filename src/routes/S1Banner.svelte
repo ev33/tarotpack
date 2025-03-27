@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
+	import { Marquee } from "@selemondev/svelte-marquee";
+	import "@selemondev/svelte-marquee/dist/style.css";
 
 	function goToPage(page: string) {
 		goto("/" + page);
@@ -7,6 +9,20 @@
 </script>
 
 <div id="S1Banner">
+	<Marquee fade={true}>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+		<div class="tarotCard"></div>
+	</Marquee>
 	<div class="title">매일 타로팩으로<br />점치는 특별한 운세</div>
 	<div id="buttons">
 		<button
@@ -27,10 +43,19 @@
 <style>
 	#S1Banner {
 		height: 600px;
-		padding: 16% 0px 50px 0px;
+		padding: 12% 0px 50px 0px;
 		background-image: linear-gradient(to top, rgb(236, 106, 106), rgb(205, 16, 51));
 		color: rgb(255, 255, 255);
 		overflow: hidden;
+	}
+
+	.tarotCard {
+		width: 70px;
+		height: 120px;
+		background-color: rgba(0, 0, 0, 0.05);
+		margin: 20px 6px 30px 6px;
+		box-shadow: rgba(255, 242, 102, 0.483) 0px 0px 20px;
+		bottom: 0;
 	}
 
 	.title {

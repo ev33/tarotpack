@@ -152,12 +152,12 @@
 	.menuItem {
 		width: 100%;
 		height: 42px;
-		font-size: 18px;
+		font-size: 16px;
 		display: flex;
 		align-items: center;
 		padding-left: 20px;
 		color: #2f2f2f;
-		font-weight: 500;
+		font-weight: 400;
 		cursor: pointer;
 	}
 
