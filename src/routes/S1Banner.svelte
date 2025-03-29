@@ -1,27 +1,80 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
+	import { onDestroy, onMount } from "svelte";
+
+	let marquee1: HTMLElement;
+	let marquee2: HTMLElement;
+	let lastTimestamp = 0;
+	let animationFrameId: number;
 
 	function goToPage(page: string) {
 		goto("/" + page);
 	}
+
+	onMount(() => {
+		marquee1.style.transform = "translateX(0px)";
+		marquee2.style.transform = "translateX(0px)";
+
+		const moveMarquee = (timestamp: number) => {
+			if (!marquee1 || !marquee2) {
+				return;
+			}
+
+			const deltaTime = timestamp - lastTimestamp;
+			lastTimestamp = timestamp;
+
+			let currentPosition1 = parseFloat(getComputedStyle(marquee1).transform.split(",")[4]);
+			let currentPosition2 = parseFloat(getComputedStyle(marquee2).transform.split(",")[4]);
+
+			const speed = 0.03;
+
+			currentPosition1 -= speed * deltaTime;
+			currentPosition2 -= speed * deltaTime;
+
+			marquee1.style.transform = `translateX(${currentPosition1}px)`;
+			marquee2.style.transform = `translateX(${currentPosition2}px)`;
+
+			if (currentPosition1 <= -686) {
+				marquee1.style.transform = `translateX(${currentPosition2 + 686 + 686}px)`;
+			}
+
+			if (currentPosition2 <= -686 * 2) {
+				marquee2.style.transform = `translateX(${currentPosition1}px)`;
+			}
+
+			animationFrameId = requestAnimationFrame(moveMarquee);
+		};
+
+		animationFrameId = requestAnimationFrame(moveMarquee);
+
+		onDestroy(() => {
+			cancelAnimationFrame(animationFrameId); // 애니메이션 프레임 취소
+		});
+	});
 </script>
 
 <div id="S1Banner">
 	<div class="title">매일 타로팩으로<br />점치는 특별한 운세</div>
-	<!-- <Marquee style={"margin: auto;"}> -->
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<div class="tarotCard"></div>
-	<!-- </Marquee> -->
+	<div id="marqueeContainer">
+		<div class="marquee" bind:this={marquee1}>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+		</div>
+		<div class="marquee" bind:this={marquee2}>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+			<div class="tarotCard"></div>
+		</div>
+	</div>
 
 	<div id="buttons">
 		<button
@@ -48,13 +101,32 @@
 		overflow: hidden;
 	}
 
+	#marqueeContainer {
+		display: flex;
+		/* width: auto; */
+	}
+
+	.marquee {
+		overflow: hidden;
+		white-space: nowrap; /* 자식 요소들이 다음 줄로 넘어가는 것을 방지 */
+		display: flex;
+		justify-content: space-evenly;
+		width: calc(98 * 7px);
+		flex-grow: 0; /* 공간을 채우지 않도록 설정 */
+		flex-shrink: 0; /* 축소되지 않도록 설정 */
+		flex-basis: auto; /* 기본 크기 설정 */
+	}
+
 	.tarotCard {
 		width: 70px;
 		height: 120px;
 		background-color: rgba(0, 0, 0, 0.05);
-		margin: 40px 6px 50px 6px;
+		margin: 40px 14px 50px 14px;
 		box-shadow: rgba(255, 242, 102, 0.483) 0px 0px 20px;
 		bottom: 0;
+		flex-grow: 0; /* 공간을 채우지 않도록 설정 */
+		flex-shrink: 0; /* 축소되지 않도록 설정 */
+		flex-basis: auto; /* 기본 크기 설정 */
 	}
 
 	.title {
