@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
-	import { Marquee } from "@selemondev/svelte-marquee";
-	import "@selemondev/svelte-marquee/dist/style.css";
 
 	function goToPage(page: string) {
 		goto("/" + page);
@@ -10,20 +8,20 @@
 
 <div id="S1Banner">
 	<div class="title">매일 타로팩으로<br />점치는 특별한 운세</div>
-	<Marquee fade={true}>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-		<div class="tarotCard"></div>
-	</Marquee>
+	<!-- <Marquee style={"margin: auto;"}> -->
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<div class="tarotCard"></div>
+	<!-- </Marquee> -->
 
 	<div id="buttons">
 		<button
@@ -103,5 +101,11 @@
 	#rightButton {
 		background-color: rgb(47, 9, 9);
 		color: white;
+	}
+
+	@media (max-width: 480px) {
+		.title {
+			font-size: 36px;
+		}
 	}
 </style>
