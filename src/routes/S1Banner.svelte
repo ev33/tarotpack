@@ -91,7 +91,7 @@
 			}}>지금 시작하기</button
 		>
 	</div>
-	<div id="mockupContainer">
+	<div id="mockupContainer" on:}>
 		<div id="leftMockup">
 			<img id="leftMockupImage" alt="모바일 목업" src={mockup} /><br /><br /><br /><br /><br
 			/>타로팩 개봉도 간편하게<br />별도 앱 설치가 필요하지 않아요
@@ -102,7 +102,7 @@
 		</div>
 	</div>
 	<div>
-		<div class="keyContainer" in:fly={{ x: 100, duration: 500 }}>
+		<div class="keyContainer">
 			<div class="key">KEY 01</div>
 			<div class="keyTitle">895,184가지 카드 조합</div>
 			<div class="keyDesc">
@@ -110,7 +110,7 @@
 			</div>
 			<div class="keyImage">이미지를 넣어주세요.</div>
 		</div>
-		<div class="keyContainer" in:fly={{ x: 100, duration: 500 }}>
+		<div class="keyContainer">
 			<div class="key">KEY 02</div>
 			<div class="keyTitle">AI의 맞춤형 해석</div>
 			<div class="keyDesc">
@@ -118,7 +118,7 @@
 			</div>
 			<div class="keyImage">이미지를 넣어주세요.</div>
 		</div>
-		<div class="keyContainer" in:fly={{ x: 100, duration: 500 }}>
+		<div class="keyContainer">
 			<div class="key">KEY 03</div>
 			<div class="keyTitle">몰입력 있는 그래픽</div>
 			<div class="keyDesc">
@@ -131,7 +131,7 @@
 
 <style>
 	#S1Banner {
-		padding: 12% 0px 0px 0px;
+		padding: 20% 0px 0px 0px;
 		background-image: linear-gradient(to top, rgb(236, 106, 106), rgb(205, 16, 51));
 		color: rgb(255, 255, 255);
 		overflow: hidden;
@@ -141,7 +141,7 @@
 		display: flex;
 		margin-left: 20px;
 		margin-right: 20px;
-		margin-bottom: 12%;
+		margin-bottom: 100px;
 	}
 
 	#leftMockup {
@@ -228,12 +228,9 @@
 
 	.keyContainer {
 		position: relative;
-		/* top: -1px; */
 		background-color: white;
-		padding-top: 10%;
-		padding-bottom: 40px;
-		/* border-top-left-radius: 30px; */
-		/* border-top-right-radius: 30px; */
+		padding-top: 100px;
+		padding-bottom: 60px;
 		background-color: rgb(250, 250, 250);
 	}
 
@@ -245,7 +242,7 @@
 		margin: auto;
 		font-size: 18px;
 		padding: 10px;
-		font-weight: 500;
+		font-weight: 600;
 		margin-bottom: 20px;
 	}
 
@@ -266,11 +263,11 @@
 	}
 
 	.keyImage {
-		padding-bottom: 20%;
-		background-color: #00000014;
+		padding-bottom: 30%;
+		background-color: #cdcdcd4e;
 		margin: 20px 60px 0px 60px;
 
-		padding-top: 20%;
+		padding-top: 30%;
 		color: rgb(185, 185, 185);
 		text-align: center;
 	}
@@ -290,10 +287,10 @@
 		}
 
 		.key {
-			width: 80px;
-			font-size: 14px;
-			padding: 10px;
-			font-weight: 500;
+			width: 90px;
+			font-size: 16px;
+			padding: 8px;
+			font-weight: 600;
 			margin-bottom: 20px;
 		}
 
