@@ -91,7 +91,7 @@
 			}}>지금 시작하기</button
 		>
 	</div>
-	<div id="mockupContainer" on:}>
+	<div id="mockupContainer">
 		<div id="leftMockup">
 			<img id="leftMockupImage" alt="모바일 목업" src={mockup} /><br /><br /><br /><br /><br
 			/>타로팩 개봉도 간편하게<br />별도 앱 설치가 필요하지 않아요
