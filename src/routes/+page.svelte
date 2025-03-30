@@ -8,7 +8,7 @@
 
 <style>
 	@font-face {
-		font-family: "PyeongChangPeace-Bold";
+		font-family: "PyeongChangPeace-Light";
 		src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2")
 			format("woff2");
 		font-weight: 700;

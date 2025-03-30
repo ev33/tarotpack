@@ -106,9 +106,25 @@
 			<div class="key">KEY 01</div>
 			<div class="keyTitle">895,184가지 카드 조합</div>
 			<div class="keyDesc">
-				87종의 카드 중 메인 카드 1장, 서브 카드 2장, 카드의 방향까지<br />무수히 많은 카드 조합으로
-				항상 새로운 맞춤 운세를 제공해요.
+				87종의 카드 중 메인/서브 카드, 카드의 방향으로<br />수많은 카드 조합과 항상 새로운 맞춤 운세
 			</div>
+			<div class="keyImage">이미지를 넣어주세요.</div>
+		</div>
+		<div class="keyContainer" in:fly={{ x: 100, duration: 500 }}>
+			<div class="key">KEY 02</div>
+			<div class="keyTitle">AI의 맞춤형 해석</div>
+			<div class="keyDesc">
+				정통 타로의 지식을 완벽하기 학습한 AI가<br />타로 전문가 수준의 해석을 제공해요
+			</div>
+			<div class="keyImage">이미지를 넣어주세요.</div>
+		</div>
+		<div class="keyContainer" in:fly={{ x: 100, duration: 500 }}>
+			<div class="key">KEY 03</div>
+			<div class="keyTitle">몰입력 있는 그래픽</div>
+			<div class="keyDesc">
+				오프라인 타로를 보는 것 같이 실감나는 연출<br />그리고 카드팩을 뜯는 손맛까지
+			</div>
+			<div class="keyImage">이미지를 넣어주세요.</div>
 		</div>
 	</div>
 </div>
@@ -125,6 +141,7 @@
 		display: flex;
 		margin-left: 20px;
 		margin-right: 20px;
+		margin-bottom: 12%;
 	}
 
 	#leftMockup {
@@ -177,7 +194,7 @@
 		text-align: center;
 		font-size: 44px;
 		font-weight: 500;
-		font-family: PyeongChangPeace-Bold;
+		font-family: PyeongChangPeace-Light;
 	}
 
 	#buttons {
@@ -210,14 +227,14 @@
 	}
 
 	.keyContainer {
+		position: relative;
+		/* top: -1px; */
 		background-color: white;
-		margin-top: 20%;
-		padding-top: 20%;
-		padding-bottom: 100px;
+		padding-top: 10%;
+		padding-bottom: 40px;
 		/* border-top-left-radius: 30px; */
 		/* border-top-right-radius: 30px; */
-		box-shadow: rgba(140, 9, 9, 0.4) 0px 2px 20px;
-		background-color: rgb(246, 246, 246);
+		background-color: rgb(250, 250, 250);
 	}
 
 	.key {
@@ -243,9 +260,19 @@
 	.keyDesc {
 		text-align: center;
 		font-size: 16px;
-		color: #b2b2b2;
+		color: #9b9b9b;
 		font-weight: 400;
 		line-height: 26px;
+	}
+
+	.keyImage {
+		padding-bottom: 20%;
+		background-color: #00000014;
+		margin: 20px 60px 0px 60px;
+
+		padding-top: 20%;
+		color: rgb(185, 185, 185);
+		text-align: center;
 	}
 
 	@media (max-width: 480px) {
@@ -254,12 +281,24 @@
 		}
 
 		.keyTitle {
-			font-size: 24px;
+			font-size: 28px;
 		}
 
 		.keyDesc {
-			font-size: 12px;
-			line-height: 20px;
+			font-size: 16px;
+			line-height: 24px;
+		}
+
+		.key {
+			width: 80px;
+			font-size: 14px;
+			padding: 10px;
+			font-weight: 500;
+			margin-bottom: 20px;
+		}
+
+		.keyImage {
+			margin: 20px 20px 0px 20px;
 		}
 	}
 </style>
