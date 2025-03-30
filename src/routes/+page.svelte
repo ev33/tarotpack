@@ -17,7 +17,7 @@
 
 	#introPage {
 		min-height: calc(100vh - 179.59px);
-		height: 1500px;
+		/* height: 1500px; */
 		background-color: rgb(244, 244, 244);
 	}
 </style>

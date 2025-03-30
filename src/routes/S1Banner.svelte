@@ -2,6 +2,7 @@
 	import { goto } from "$app/navigation";
 	import { onDestroy, onMount } from "svelte";
 	import mockup from "$lib/assets/mockup.png";
+	import { fly } from "svelte/transition";
 
 	let marquee1: HTMLElement;
 	let marquee2: HTMLElement;
@@ -49,7 +50,7 @@
 		animationFrameId = requestAnimationFrame(moveMarquee);
 
 		onDestroy(() => {
-			cancelAnimationFrame(animationFrameId); // 애니메이션 프레임 취소
+			cancelAnimationFrame(animationFrameId);
 		});
 	});
 </script>
@@ -92,22 +93,29 @@
 	</div>
 	<div id="mockupContainer">
 		<div id="leftMockup">
-			<img id="leftMockupImage" alt="모바일 목업" src={mockup} /><br /><br /><br /><br /><br />목업
-			설명2asdadasdasdasdsaads
+			<img id="leftMockupImage" alt="모바일 목업" src={mockup} /><br /><br /><br /><br /><br
+			/>타로팩 개봉도 간편하게<br />별도 앱 설치가 필요하지 않아요
 		</div>
 		<div id="rightMockup">
-			목업 설명1<br /><br /><br /><br /><br /><br /><br /><img
-				id="rightMockupImage"
-				alt="모바일 목업"
-				src={mockup}
-			/>
+			<br />카톡으로 간편하게<br />매일 잊지 않고 이용할 수 있도록<br /><br /><br /><br /><br /><br
+			/><img id="rightMockupImage" alt="모바일 목업" src={mockup} />
+		</div>
+	</div>
+	<div>
+		<div class="keyContainer" in:fly={{ x: 100, duration: 500 }}>
+			<div class="key">KEY 01</div>
+			<div class="keyTitle">895,184가지 카드 조합</div>
+			<div class="keyDesc">
+				87종의 카드 중 메인 카드 1장, 서브 카드 2장, 카드의 방향까지<br />무수히 많은 카드 조합으로
+				항상 새로운 맞춤 운세를 제공해요.
+			</div>
 		</div>
 	</div>
 </div>
 
 <style>
 	#S1Banner {
-		padding: 12% 0px 50px 0px;
+		padding: 12% 0px 0px 0px;
 		background-image: linear-gradient(to top, rgb(236, 106, 106), rgb(205, 16, 51));
 		color: rgb(255, 255, 255);
 		overflow: hidden;
@@ -121,11 +129,12 @@
 
 	#leftMockup {
 		padding-right: 10px;
-		text-align: right;
+		text-align: center;
 	}
 
 	#rightMockup {
 		padding-left: 10px;
+		text-align: center;
 	}
 
 	#leftMockupImage {
@@ -138,18 +147,18 @@
 
 	#marqueeContainer {
 		display: flex;
-		/* width: auto; */
+		margin-bottom: 4px;
 	}
 
 	.marquee {
 		overflow: hidden;
-		white-space: nowrap; /* 자식 요소들이 다음 줄로 넘어가는 것을 방지 */
+		white-space: nowrap;
 		display: flex;
 		justify-content: space-evenly;
 		width: calc(98 * 7px);
-		flex-grow: 0; /* 공간을 채우지 않도록 설정 */
-		flex-shrink: 0; /* 축소되지 않도록 설정 */
-		flex-basis: auto; /* 기본 크기 설정 */
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: auto;
 	}
 
 	.tarotCard {
@@ -159,9 +168,9 @@
 		margin: 40px 14px 44px 14px;
 		box-shadow: rgba(255, 242, 102, 0.483) 0px 0px 20px;
 		bottom: 0;
-		flex-grow: 0; /* 공간을 채우지 않도록 설정 */
-		flex-shrink: 0; /* 축소되지 않도록 설정 */
-		flex-basis: auto; /* 기본 크기 설정 */
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: auto;
 	}
 
 	.title {
@@ -200,9 +209,57 @@
 		color: white;
 	}
 
+	.keyContainer {
+		background-color: white;
+		margin-top: 20%;
+		padding-top: 20%;
+		padding-bottom: 100px;
+		/* border-top-left-radius: 30px; */
+		/* border-top-right-radius: 30px; */
+		box-shadow: rgba(140, 9, 9, 0.4) 0px 2px 20px;
+		background-color: rgb(246, 246, 246);
+	}
+
+	.key {
+		background-color: #262626;
+		width: 100px;
+		border-radius: 100px;
+		text-align: center;
+		margin: auto;
+		font-size: 18px;
+		padding: 10px;
+		font-weight: 500;
+		margin-bottom: 20px;
+	}
+
+	.keyTitle {
+		text-align: center;
+		font-size: 36px;
+		font-weight: 600;
+		color: #262626;
+		margin-bottom: 6px;
+	}
+
+	.keyDesc {
+		text-align: center;
+		font-size: 16px;
+		color: #b2b2b2;
+		font-weight: 400;
+		line-height: 26px;
+	}
+
 	@media (max-width: 480px) {
 		.title {
 			font-size: 36px;
+		}
+
+		.keyTitle {
+			font-size: 24px;
+		}
+
+		.keyDesc {
+			font-size: 12px;
+			line-height: 20px;
 		}
 	}
 </style>
