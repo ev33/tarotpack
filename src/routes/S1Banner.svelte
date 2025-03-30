@@ -2,6 +2,7 @@
 	import { goto } from "$app/navigation";
 	import { onDestroy, onMount } from "svelte";
 	import mockup from "$lib/assets/mockup.png";
+	import { flyReveal } from "$lib/util/reveal";
 	import { fly } from "svelte/transition";
 
 	let marquee1: HTMLElement;
@@ -103,28 +104,28 @@
 	</div>
 	<div>
 		<div class="keyContainer">
-			<div class="key">KEY 01</div>
-			<div class="keyTitle">895,184가지 카드 조합</div>
-			<div class="keyDesc">
+			<div class="key" use:flyReveal>KEY 01</div>
+			<div class="keyTitle" use:flyReveal>895,184가지 카드 조합</div>
+			<div class="keyDesc" use:flyReveal>
 				87종의 카드 중 메인/서브 카드, 카드의 방향으로<br />수많은 카드 조합과 항상 새로운 맞춤 운세
 			</div>
-			<div class="keyImage">이미지를 넣어주세요.</div>
+			<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
 		</div>
 		<div class="keyContainer">
-			<div class="key">KEY 02</div>
-			<div class="keyTitle">AI의 맞춤형 해석</div>
-			<div class="keyDesc">
+			<div class="key" use:flyReveal>KEY 02</div>
+			<div class="keyTitle" use:flyReveal>AI의 맞춤형 해석</div>
+			<div class="keyDesc" use:flyReveal>
 				정통 타로의 지식을 완벽하기 학습한 AI가<br />타로 전문가 수준의 해석을 제공해요
 			</div>
-			<div class="keyImage">이미지를 넣어주세요.</div>
+			<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
 		</div>
 		<div class="keyContainer">
-			<div class="key">KEY 03</div>
-			<div class="keyTitle">몰입력 있는 그래픽</div>
-			<div class="keyDesc">
+			<div class="key" use:flyReveal>KEY 03</div>
+			<div class="keyTitle" use:flyReveal>몰입력 있는 그래픽</div>
+			<div class="keyDesc" use:flyReveal>
 				오프라인 타로를 보는 것 같이 실감나는 연출<br />그리고 카드팩을 뜯는 손맛까지
 			</div>
-			<div class="keyImage">이미지를 넣어주세요.</div>
+			<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
 		</div>
 	</div>
 </div>
