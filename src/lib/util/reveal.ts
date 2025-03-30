@@ -1,11 +1,11 @@
-import { reveal } from "svelte-reveal"; // 사용하는 라이브러리에 맞게 import 필요
+import { reveal } from "svelte-reveal";
 import type { Action } from "svelte/action";
 
 export const flyReveal: Action<HTMLElement> = (node) => {
 	const instance = reveal(node, {
 		preset: "fly",
-		y: 20,
-		duration: 1400,
+		y: 30,
+		duration: 1800,
 		easing: "easeOutExpo"
 	});
 

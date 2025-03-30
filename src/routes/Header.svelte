@@ -2,6 +2,7 @@
 	import { goto } from "$app/navigation";
 	import type { Writable } from "svelte/store";
 	import Icon from "@iconify/svelte";
+	import logo from "$lib/assets/logo.svg";
 
 	export let isMenuOpen: Writable<boolean>;
 
@@ -19,7 +20,11 @@
 </script>
 
 <header>
-	<button on:click={goToRootPage}>로고</button>
+	<button on:click={goToRootPage} id="logo"
+		><img id="logo1" src={logo} alt="Logo" height="24" />
+		<img id="logo2" src={logo} alt="Logo" height="24" />
+		<img id="logo3" src={logo} alt="Logo" height="24" />
+	</button>
 	<button on:click={toggleMenu}><Icon icon="tabler:menu-2" /></button>
 </header>
 
@@ -44,5 +49,63 @@
 		padding-top: 6px;
 		transform: translateX(5px);
 		color: rgb(88, 88, 88);
+	}
+
+	@keyframes moveLogo2 {
+		0% {
+			top: -8px;
+			transform: rotateZ(0deg) translateX(0px) translateY(-3px);
+		}
+		80% {
+			top: -8px;
+			transform: rotateZ(0deg) translateX(0px) translateY(-3px);
+		}
+		90% {
+			top: -8px;
+			transform: rotateZ(-20deg) translateX(-10px) translateY(-3px);
+		}
+		100% {
+			top: -8px;
+			transform: rotateZ(0deg) translateX(0px) translateY(-3px);
+		}
+	}
+
+	@keyframes moveLogo3 {
+		0% {
+			top: -8px;
+			transform: rotateZ(20deg) translateX(10px) translateY(-3px);
+		}
+		79.5% {
+			top: -8px;
+			transform: rotateZ(20deg) translateX(10px) translateY(-3px);
+		}
+		89.5% {
+			top: -8px;
+			transform: rotateZ(-20deg) translateX(-10px) translateY(-3px);
+		}
+		99.5% {
+			top: -8px;
+			transform: rotateZ(20deg) translateX(10px) translateY(-3px);
+		}
+	}
+
+	#logo1 {
+		position: absolute;
+		top: -8px;
+		transform: rotateZ(-20deg) translateX(-10px) translateY(-3px);
+	}
+
+	#logo2 {
+		position: absolute;
+		top: -8px;
+		transform: translateY(-3px);
+		animation: moveLogo2 8s infinite;
+	}
+
+	#logo3 {
+		position: absolute;
+		top: -8px;
+		transform: rotateZ(20deg) translateX(10px) translateY(-3px);
+		animation: moveLogo3 8s infinite;
 	}
 </style>

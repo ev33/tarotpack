@@ -3,7 +3,6 @@
 	import { onDestroy, onMount } from "svelte";
 	import mockup from "$lib/assets/mockup.png";
 	import { flyReveal } from "$lib/util/reveal";
-	import { fly } from "svelte/transition";
 
 	let marquee1: HTMLElement;
 	let marquee2: HTMLElement;
@@ -113,9 +112,9 @@
 		</div>
 		<div class="keyContainer">
 			<div class="key" use:flyReveal>KEY 02</div>
-			<div class="keyTitle" use:flyReveal>AI의 맞춤형 해석</div>
+			<div class="keyTitle" use:flyReveal>AI의 맞춤형 운세 해설</div>
 			<div class="keyDesc" use:flyReveal>
-				정통 타로의 지식을 완벽하기 학습한 AI가<br />타로 전문가 수준의 해석을 제공해요
+				정통 타로의 지식을 완벽하게 학습한 AI가<br />타로 전문가 수준의 해설 제공
 			</div>
 			<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
 		</div>
@@ -156,11 +155,13 @@
 	}
 
 	#leftMockupImage {
-		width: calc(100%);
+		width: calc(80%);
+		margin-left: 30px;
 	}
 
 	#rightMockupImage {
-		width: calc(100%);
+		width: calc(80%);
+		margin-right: 30px;
 	}
 
 	#marqueeContainer {
@@ -189,6 +190,7 @@
 		flex-grow: 0;
 		flex-shrink: 0;
 		flex-basis: auto;
+		border-radius: 10px;
 	}
 
 	.title {
@@ -276,6 +278,16 @@
 	@media (max-width: 480px) {
 		.title {
 			font-size: 36px;
+		}
+
+		#leftMockupImage {
+			width: calc(100%);
+			margin-left: 0px;
+		}
+
+		#rightMockupImage {
+			width: calc(100%);
+			margin-right: 0px;
 		}
 
 		.keyTitle {
