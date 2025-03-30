@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
 	import { onDestroy, onMount } from "svelte";
+	import mockup from "$lib/assets/mockup.png";
 
 	let marquee1: HTMLElement;
 	let marquee2: HTMLElement;
@@ -89,16 +90,50 @@
 			}}>지금 시작하기</button
 		>
 	</div>
-	<div id="mockup">모바일 기기 목업이 들어갈 곳이에요</div>
+	<div id="mockupContainer">
+		<div id="leftMockup">
+			<img id="leftMockupImage" alt="모바일 목업" src={mockup} /><br /><br /><br /><br /><br />목업
+			설명2asdadasdasdasdsaads
+		</div>
+		<div id="rightMockup">
+			목업 설명1<br /><br /><br /><br /><br /><br /><br /><img
+				id="rightMockupImage"
+				alt="모바일 목업"
+				src={mockup}
+			/>
+		</div>
+	</div>
 </div>
 
 <style>
 	#S1Banner {
-		height: 600px;
 		padding: 12% 0px 50px 0px;
 		background-image: linear-gradient(to top, rgb(236, 106, 106), rgb(205, 16, 51));
 		color: rgb(255, 255, 255);
 		overflow: hidden;
+	}
+
+	#mockupContainer {
+		display: flex;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	#leftMockup {
+		padding-right: 10px;
+		text-align: right;
+	}
+
+	#rightMockup {
+		padding-left: 10px;
+	}
+
+	#leftMockupImage {
+		width: calc(100%);
+	}
+
+	#rightMockupImage {
+		width: calc(100%);
 	}
 
 	#marqueeContainer {
@@ -121,7 +156,7 @@
 		width: 70px;
 		height: 120px;
 		background-color: rgba(0, 0, 0, 0.05);
-		margin: 40px 14px 50px 14px;
+		margin: 40px 14px 44px 14px;
 		box-shadow: rgba(255, 242, 102, 0.483) 0px 0px 20px;
 		bottom: 0;
 		flex-grow: 0; /* 공간을 채우지 않도록 설정 */
@@ -136,17 +171,6 @@
 		font-family: PyeongChangPeace-Bold;
 	}
 
-	#mockup {
-		margin: 20px;
-		padding-top: 100px;
-		width: calc(100% - 40px);
-		height: 300px;
-		background-color: rgba(255, 255, 255, 0.04);
-		transform: translateY(30px);
-		text-align: center;
-		color: rgba(255, 255, 255, 0.5);
-	}
-
 	#buttons {
 		padding-right: 20px;
 		padding-left: 20px;
@@ -155,6 +179,7 @@
 		justify-content: space-between;
 		align-items: center;
 		margin: auto;
+		margin-bottom: 100px;
 	}
 
 	button {
