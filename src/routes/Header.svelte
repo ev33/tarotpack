@@ -1,26 +1,18 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
 	import type { Writable } from "svelte/store";
 	import Icon from "@iconify/svelte";
 	import logo from "$lib/assets/logo.svg";
+	import { gotoRootPage } from "$lib/utils/UtilPage";
 
 	export let isMenuOpen: Writable<boolean>;
 
 	function toggleMenu() {
 		isMenuOpen.update((value) => !value);
 	}
-
-	function goToRootPage() {
-		if (window.location.pathname !== "/") {
-			goto("/");
-		} else {
-			window.scrollTo({ top: 0, behavior: "smooth" });
-		}
-	}
 </script>
 
 <header>
-	<button on:click={goToRootPage} id="logo"
+	<button on:click={gotoRootPage} id="logo"
 		><img id="logo1" src={logo} alt="Logo" height="24" />
 		<img id="logo2" src={logo} alt="Logo" height="24" />
 		<img id="logo3" src={logo} alt="Logo" height="24" />
@@ -103,13 +95,13 @@
 		position: absolute;
 		top: -8px;
 		transform: translateY(-3px);
-		animation: moveLogo2 8s infinite;
+		animation: moveLogo2 8s;
 	}
 
 	#logo3 {
 		position: absolute;
 		top: -8px;
 		transform: rotateZ(20deg) translateX(10px) translateY(-3px);
-		animation: moveLogo3 8s infinite;
+		animation: moveLogo3 8s;
 	}
 </style>

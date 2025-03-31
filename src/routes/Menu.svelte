@@ -72,13 +72,13 @@
 				class="menuItem"
 				on:click={() => {
 					onClickItem("subscribe");
-				}}>시작하기</button
+				}}>타로팩 구매</button
 			>
 			<button
 				class="menuItem"
 				on:click={() => {
 					onClickItem("sample");
-				}}>무료 체험</button
+				}}>무료 체험하기</button
 			>
 			<hr />
 			<button

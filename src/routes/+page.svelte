@@ -1,9 +1,12 @@
 <script>
-	import S1Banner from "./S1Banner.svelte";
+	// @ts-ignore
+	import SectionIntro from "./SectionIntro.svelte";
+	import SectionKeys from "./SectionKeys.svelte";
 </script>
 
 <div id="introPage">
-	<S1Banner />
+	<SectionIntro />
+	<SectionKeys />
 </div>
 
 <style>

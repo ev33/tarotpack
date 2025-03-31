@@ -1,17 +1,12 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
+	import { gotoPage } from "$lib/utils/UtilPage";
 	import { onDestroy, onMount } from "svelte";
 	import mockup from "$lib/assets/mockup.png";
-	import { flyReveal } from "$lib/util/reveal";
 
 	let marquee1: HTMLElement;
 	let marquee2: HTMLElement;
 	let lastTimestamp = 0;
 	let animationFrameId: number;
-
-	function goToPage(page: string) {
-		goto("/" + page);
-	}
 
 	onMount(() => {
 		marquee1.style.transform = "translateX(0px)";
@@ -82,49 +77,23 @@
 		<button
 			id="leftButton"
 			on:click={() => {
-				goToPage("sample");
+				gotoPage("sample");
 			}}>타로팩 체험하기</button
 		><button
 			id="rightButton"
 			on:click={() => {
-				goToPage("subscribe");
+				gotoPage("subscribe");
 			}}>지금 시작하기</button
 		>
 	</div>
 	<div id="mockupContainer">
 		<div id="leftMockup">
-			<img id="leftMockupImage" alt="모바일 목업" src={mockup} /><br /><br /><br /><br /><br
-			/>타로팩 개봉도 간편하게<br />별도 앱 설치가 필요하지 않아요
+			<img id="leftMockupImage" alt="모바일 목업" src={mockup} />
+			<div id="leftMockupDesc">앱 설치 과정 없이<br />타로팩을 뽑아서<br />오늘 운세를 확인</div>
 		</div>
 		<div id="rightMockup">
-			<br />카톡으로 간편하게<br />매일 잊지 않고 이용할 수 있도록<br /><br /><br /><br /><br /><br
-			/><img id="rightMockupImage" alt="모바일 목업" src={mockup} />
-		</div>
-	</div>
-	<div>
-		<div class="keyContainer">
-			<div class="key" use:flyReveal>KEY 01</div>
-			<div class="keyTitle" use:flyReveal>895,184가지 카드 조합</div>
-			<div class="keyDesc" use:flyReveal>
-				87종의 카드 중 메인/서브 카드, 카드의 방향으로<br />수많은 카드 조합과 항상 새로운 맞춤 운세
-			</div>
-			<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
-		</div>
-		<div class="keyContainer">
-			<div class="key" use:flyReveal>KEY 02</div>
-			<div class="keyTitle" use:flyReveal>AI의 맞춤형 운세 해설</div>
-			<div class="keyDesc" use:flyReveal>
-				정통 타로의 지식을 완벽하게 학습한 AI가<br />타로 전문가 수준의 해설 제공
-			</div>
-			<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
-		</div>
-		<div class="keyContainer">
-			<div class="key" use:flyReveal>KEY 03</div>
-			<div class="keyTitle" use:flyReveal>몰입력 있는 그래픽</div>
-			<div class="keyDesc" use:flyReveal>
-				오프라인 타로를 보는 것 같이 실감나는 연출<br />그리고 카드팩을 뜯는 손맛까지
-			</div>
-			<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
+			<div id="rightMockupDesc">매일 정해진 시간<br />타로팩이 들어있는<br />카카오톡 메세지</div>
+			<img id="rightMockupImage" alt="모바일 목업" src={mockup} />
 		</div>
 	</div>
 </div>
@@ -132,7 +101,7 @@
 <style>
 	#S1Banner {
 		padding: 20% 0px 0px 0px;
-		background-image: linear-gradient(to top, rgb(236, 106, 106), rgb(205, 16, 51));
+		background-image: linear-gradient(to top, rgb(234, 96, 96), rgb(205, 16, 51));
 		color: rgb(255, 255, 255);
 		overflow: hidden;
 	}
@@ -147,21 +116,45 @@
 	#leftMockup {
 		padding-right: 10px;
 		text-align: center;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 30px;
 	}
 
 	#rightMockup {
 		padding-left: 10px;
 		text-align: center;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	#leftMockupDesc {
+		padding-top: 30%;
+		padding-bottom: 10%;
+		text-align: right;
+		margin-right: 20px;
+		font-family: PyeongChangPeace-Light;
+	}
+
+	#rightMockupDesc {
+		padding-top: 10%;
+		padding-bottom: 30%;
+		text-align: left;
+		margin-left: 20px;
+		font-family: PyeongChangPeace-Light;
 	}
 
 	#leftMockupImage {
 		width: calc(80%);
 		margin-left: 30px;
+		filter: drop-shadow(0.8em 0.8em 0.5em rgba(49, 0, 0, 0.18));
 	}
 
 	#rightMockupImage {
 		width: calc(80%);
 		margin-right: 30px;
+		filter: drop-shadow(0.8em 0.4em 0.7em rgba(49, 0, 0, 0.18));
 	}
 
 	#marqueeContainer {
@@ -229,55 +222,19 @@
 		color: white;
 	}
 
-	.keyContainer {
-		position: relative;
-		background-color: white;
-		padding-top: 100px;
-		padding-bottom: 60px;
-		background-color: rgb(250, 250, 250);
-	}
-
-	.key {
-		background-color: #262626;
-		width: 100px;
-		border-radius: 100px;
-		text-align: center;
-		margin: auto;
-		font-size: 18px;
-		padding: 10px;
-		font-weight: 600;
-		margin-bottom: 20px;
-	}
-
-	.keyTitle {
-		text-align: center;
-		font-size: 36px;
-		font-weight: 600;
-		color: #262626;
-		margin-bottom: 6px;
-	}
-
-	.keyDesc {
-		text-align: center;
-		font-size: 16px;
-		color: #9b9b9b;
-		font-weight: 400;
-		line-height: 26px;
-	}
-
-	.keyImage {
-		padding-bottom: 30%;
-		background-color: #cdcdcd4e;
-		margin: 20px 60px 0px 60px;
-
-		padding-top: 30%;
-		color: rgb(185, 185, 185);
-		text-align: center;
-	}
-
 	@media (max-width: 480px) {
 		.title {
 			font-size: 36px;
+		}
+
+		#leftMockup {
+			font-size: 16px;
+			line-height: 26px;
+		}
+
+		#rightMockup {
+			font-size: 16px;
+			line-height: 26px;
 		}
 
 		#leftMockupImage {
@@ -290,25 +247,12 @@
 			margin-right: 0px;
 		}
 
-		.keyTitle {
-			font-size: 28px;
+		#rightMockupDesc {
+			margin-left: 6px;
 		}
 
-		.keyDesc {
-			font-size: 16px;
-			line-height: 24px;
-		}
-
-		.key {
-			width: 90px;
-			font-size: 16px;
-			padding: 8px;
-			font-weight: 600;
-			margin-bottom: 20px;
-		}
-
-		.keyImage {
-			margin: 20px 20px 0px 20px;
+		#leftMockupDesc {
+			margin-right: 6px;
 		}
 	}
 </style>
