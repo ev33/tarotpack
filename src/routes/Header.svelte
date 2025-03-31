@@ -5,17 +5,34 @@
 	import { gotoRootPage } from "$lib/utils/UtilPage";
 
 	export let isMenuOpen: Writable<boolean>;
+	let logo2Element: HTMLElement;
+	let logo3Element: HTMLElement;
 
 	function toggleMenu() {
 		isMenuOpen.update((value) => !value);
 	}
+
+	function replayLogoAnimation() {
+		let clonedElement = logo2Element.cloneNode(true) as HTMLElement;
+		logo2Element.parentNode?.replaceChild(clonedElement, logo2Element);
+		logo2Element = clonedElement;
+
+		clonedElement = logo3Element.cloneNode(true) as HTMLElement;
+		logo3Element.parentNode?.replaceChild(clonedElement, logo3Element);
+		logo3Element = clonedElement;
+	}
 </script>
 
 <header>
-	<button on:click={gotoRootPage} id="logo"
+	<button
+		on:click={() => {
+			gotoRootPage();
+			replayLogoAnimation();
+		}}
+		id="logo"
 		><img id="logo1" src={logo} alt="Logo" height="24" />
-		<img id="logo2" src={logo} alt="Logo" height="24" />
-		<img id="logo3" src={logo} alt="Logo" height="24" />
+		<img id="logo2" src={logo} alt="Logo" height="24" bind:this={logo2Element} />
+		<img id="logo3" src={logo} alt="Logo" height="24" bind:this={logo3Element} />
 	</button>
 	<button on:click={toggleMenu}><Icon icon="tabler:menu-2" /></button>
 </header>

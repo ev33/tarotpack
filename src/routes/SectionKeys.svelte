@@ -5,7 +5,9 @@
 <div>
 	<div class="keyContainer">
 		<div class="key" use:flyReveal>KEY 01</div>
-		<div class="keyTitle" use:flyReveal>895,184가지 카드 조합</div>
+		<div class="keyTitle" use:flyReveal>
+			<span id="count" data-start-count="0" data-end-count="180">0</span>만 가지 카드 조합
+		</div>
 		<div class="keyDesc" use:flyReveal>
 			87종의 카드 중 메인/서브 카드, 카드의 방향으로<br />수많은 카드 조합과 항상 새로운 맞춤 운세
 		</div>
@@ -57,6 +59,13 @@
 		font-weight: 600;
 		color: #262626;
 		margin-bottom: 6px;
+	}
+
+	#count {
+		display: inline-block;
+		width: 60px;
+		text-align: right;
+		/* padding-right: 2px; */
 	}
 
 	.keyDesc {

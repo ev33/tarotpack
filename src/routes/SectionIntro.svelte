@@ -101,7 +101,7 @@
 <style>
 	#S1Banner {
 		padding: 20% 0px 0px 0px;
-		background-image: linear-gradient(to top, rgb(234, 96, 96), rgb(205, 16, 51));
+		background-image: linear-gradient(to top, rgb(233, 74, 84), rgb(205, 16, 51));
 		color: rgb(255, 255, 255);
 		overflow: hidden;
 	}
