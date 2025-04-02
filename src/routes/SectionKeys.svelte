@@ -9,23 +9,24 @@
 			<span id="count" data-start-count="0" data-end-count="180">0</span>만 가지 카드 조합
 		</div>
 		<div class="keyDesc" use:flyReveal>
-			87종의 카드 중 메인/서브 카드, 카드의 방향으로<br />수많은 카드 조합과 항상 새로운 맞춤 운세
+			87종의 카드가 만들어내는 매일 새로운 조합<br />메인 & 서브 카드와 카드 방향까지 고려
 		</div>
 		<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
 	</div>
 	<div class="keyContainer">
 		<div class="key" use:flyReveal>KEY 02</div>
-		<div class="keyTitle" use:flyReveal>AI의 맞춤형 운세 해설</div>
+		<div class="keyTitle" use:flyReveal>AI 타로 마스터의 해설</div>
 		<div class="keyDesc" use:flyReveal>
-			정통 타로의 지식을 완벽하게 학습한 AI가<br />타로 전문가 수준의 해설 제공
+			정통 타로 지식을 학습한 AI의 전문가급 해설
+			<br />지금의 당신에게 꼭 맞는 조언까지
 		</div>
 		<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
 	</div>
 	<div class="keyContainer">
 		<div class="key" use:flyReveal>KEY 03</div>
-		<div class="keyTitle" use:flyReveal>몰입감 있는 그래픽</div>
+		<div class="keyTitle" use:flyReveal>몰입감 있는 타로 경험</div>
 		<div class="keyDesc" use:flyReveal>
-			오프라인 타로를 보는 것 같이 실감나는 연출<br />그리고 카드팩을 뜯는 손맛까지
+			오프라인 타로처럼 생생한 연출과 그래픽 <br />카드팩을 뜯는 듯한 손맛까지
 		</div>
 		<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
 	</div>

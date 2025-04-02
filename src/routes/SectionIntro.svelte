@@ -90,10 +90,10 @@
 	<div id="mockupContainer">
 		<div id="leftMockup">
 			<img id="leftMockupImage" alt="모바일 목업" src={mockup} />
-			<div id="leftMockupDesc">앱 설치 과정 없이<br />타로팩을 뽑아서<br />오늘 운세를 확인</div>
+			<div id="leftMockupDesc">앱 설치 과정 없이<br />타로팩을 뽑아<br />오늘의 운세 확인</div>
 		</div>
 		<div id="rightMockup">
-			<div id="rightMockupDesc">매일 정해진 시간<br />타로팩이 들어있는<br />카카오톡 메세지</div>
+			<div id="rightMockupDesc">매일 정해진 시간<br />타로팩을 보내주는<br />카카오톡 메세지</div>
 			<img id="rightMockupImage" alt="모바일 목업" src={mockup} />
 		</div>
 	</div>
