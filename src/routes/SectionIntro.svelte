@@ -50,8 +50,9 @@
 	});
 </script>
 
+<div id="background"></div>
 <div id="S1Banner">
-	<div class="title">매일 타로팩으로<br />점치는 특별한 운세</div>
+	<div class="title">매일 <span>타로팩</span>으로<br />점치는 특별한 운세</div>
 	<div id="marqueeContainer">
 		<div class="marquee" bind:this={marquee1}>
 			<div class="tarotCard"></div>
@@ -101,9 +102,30 @@
 <style>
 	#S1Banner {
 		padding: 20% 0px 0px 0px;
-		background-image: linear-gradient(to top, rgb(233, 74, 84), rgb(205, 16, 51));
+		background-color: rgb(205, 16, 51);
 		color: rgb(255, 255, 255);
 		overflow: hidden;
+	}
+
+	#background {
+		width: min(600px, 100%);
+		padding-bottom: calc(20% + 500px);
+		background: url("$lib/assets/slogan.jpg");
+		position: absolute;
+		overflow: hidden;
+		background-size: calc(580px + 20%);
+		object-fit: cover;
+		/* background-position: center; */
+	}
+
+	#background::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to bottom, rgba(205, 16, 51, 0.1) 30%, rgb(205, 16, 51) 100%);
 	}
 
 	#mockupContainer {
@@ -111,6 +133,7 @@
 		margin-left: 20px;
 		margin-right: 20px;
 		margin-bottom: 100px;
+		position: relative;
 	}
 
 	#leftMockup {
@@ -160,6 +183,7 @@
 	#marqueeContainer {
 		display: flex;
 		margin-bottom: 4px;
+		position: relative;
 	}
 
 	.marquee {
@@ -176,9 +200,9 @@
 	.tarotCard {
 		width: 70px;
 		height: 120px;
-		background-color: rgba(0, 0, 0, 0.05);
+		background-color: rgb(255, 255, 255);
 		margin: 40px 14px 44px 14px;
-		box-shadow: rgba(255, 242, 102, 0.483) 0px 0px 20px;
+		box-shadow: rgba(255, 74, 107, 0.466) 0px 0px 10px;
 		bottom: 0;
 		flex-grow: 0;
 		flex-shrink: 0;
@@ -191,6 +215,12 @@
 		font-size: 44px;
 		font-weight: 500;
 		font-family: PyeongChangPeace-Light;
+		position: relative;
+	}
+
+	.title span {
+		color: rgb(255, 15, 59);
+		font-family: PyeongChangPeace-Bold;
 	}
 
 	#buttons {
@@ -202,6 +232,7 @@
 		align-items: center;
 		margin: auto;
 		margin-bottom: 100px;
+		position: relative;
 	}
 
 	button {
@@ -223,6 +254,12 @@
 	}
 
 	@media (max-width: 480px) {
+		#background {
+			padding-bottom: calc(20% + 470px);
+			background-size: calc(540px + 20%);
+			background-position: -80px top;
+		}
+
 		.title {
 			font-size: 36px;
 		}
