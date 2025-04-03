@@ -2,6 +2,7 @@
 	import type { Writable } from "svelte/store";
 	import { writable } from "svelte/store";
 	import { slide } from "svelte/transition";
+	import Icon from "@iconify/svelte";
 
 	let openIndex: Writable<number | null> = writable(null);
 	const faqList = [
@@ -45,7 +46,16 @@
 	<div id="title">자주 묻는 질문</div>
 
 	{#each faqList as faq, index}
-		<button class="faqItem" on:click={() => toggle(index)}>{faq.question}</button>
+		<button class="faqItem" on:click={() => toggle(index)}
+			>{faq.question}
+			<div class={$openIndex !== index ? "deactive" : "active"}>
+				<Icon
+					icon="tabler:chevron-down"
+					height="21"
+					style="transform: translateY(4px); color: rgb(200, 200, 200);"
+				/>
+			</div></button
+		>
 		{#if $openIndex === index}
 			<div class="faqAnswer" transition:slide>{faq.answer}</div>
 		{/if}
@@ -72,6 +82,10 @@
 		border: none;
 		cursor: pointer;
 		font-weight: 400;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	.faqAnswer {
@@ -89,5 +103,14 @@
 		height: 2px;
 		border: 0;
 		background: #f9f9f9;
+	}
+
+	.deactive {
+		transition: transform 300ms ease-in-out;
+	}
+
+	.active {
+		transform: rotate(180deg);
+		transition: transform 300ms ease-in-out;
 	}
 </style>

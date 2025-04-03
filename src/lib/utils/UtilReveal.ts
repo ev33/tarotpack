@@ -47,13 +47,23 @@ export const flyReveal: Action<HTMLElement> = (node) => {
 
 				count.set(endNumber);
 			}
+
+			if (span.dataset.addCss) {
+				// span.style.cssText = span.dataset.addCss;
+			}
 		});
 
-		const highlight = node.querySelector(".highlight") as HTMLElement;
-		if (highlight) {
-			updateHighlightWidth(highlight);
+		const animationElement = node.querySelector(".animation");
+		if (animationElement) {
+			const clonedElement = animationElement.cloneNode(true) as HTMLElement;
+			animationElement.parentNode?.replaceChild(clonedElement, animationElement);
+		}
 
-			const resizeHandler = () => updateHighlightWidth(highlight);
+		const highlightElement = node.querySelector(".highlight") as HTMLElement;
+		if (highlightElement) {
+			updateHighlightWidth(highlightElement);
+
+			const resizeHandler = () => updateHighlightWidth(highlightElement);
 			window.addEventListener("resize", resizeHandler);
 
 			return () => {
@@ -62,14 +72,14 @@ export const flyReveal: Action<HTMLElement> = (node) => {
 		}
 	}
 
-	function updateHighlightWidth(highlight: HTMLElement) {
-		const mobileWidth = highlight.dataset.mobileWidth ?? "100";
-		const desktopWidth = highlight.dataset.desktopWidth ?? "100";
+	function updateHighlightWidth(highlightElement: HTMLElement) {
+		const mobileWidth = highlightElement.dataset.mobileWidth ?? "100";
+		const desktopWidth = highlightElement.dataset.desktopWidth ?? "100";
 
 		if (window.innerWidth > 480) {
-			highlight.style.width = desktopWidth + "px";
+			highlightElement.style.width = desktopWidth + "px";
 		} else {
-			highlight.style.width = mobileWidth + "px";
+			highlightElement.style.width = mobileWidth + "px";
 		}
 	}
 

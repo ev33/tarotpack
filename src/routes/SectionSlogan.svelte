@@ -42,7 +42,6 @@
 	#recommend {
 		text-align: center;
 		color: #262626;
-		margin-bottom: 40px;
 		font-size: 32px;
 		font-weight: 600;
 	}
@@ -66,9 +65,10 @@
 		margin-right: 40px;
 		padding: 30px 0px;
 		font-size: 20px;
-		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.06);
+		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 		border-radius: 20px;
 		font-weight: 600;
+		border: 1px solid #262626;
 	}
 
 	.case span {
