@@ -249,7 +249,7 @@
 	}
 
 	#rightButton {
-		background-color: rgb(47, 9, 9);
+		background-color: #151515;
 		color: white;
 	}
 

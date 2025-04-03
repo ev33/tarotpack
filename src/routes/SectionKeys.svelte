@@ -177,5 +177,14 @@
 		.keyImage {
 			margin: 20px 20px 0px 20px;
 		}
+
+		#immersion {
+			height: 39px;
+			width: 74px;
+			animation: immersion 1000ms cubic-bezier(0.4, 1.3, 0.5, 1);
+			white-space: nowrap;
+			text-align: left;
+			font-weight: 800;
+		}
 	}
 </style>
