@@ -4,7 +4,8 @@
 
 <div>
 	<div class="keyContainer">
-		<div class="key" use:flyReveal>KEY 01</div>
+		<div id="line"></div>
+		<div class="key">KEY 01</div>
 		<div class="keyTitle" use:flyReveal>
 			<span id="count" data-start-count="0" data-end-count="180">0</span>만 가지 카드 조합
 		</div>
@@ -14,7 +15,7 @@
 		<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
 	</div>
 	<div class="keyContainer">
-		<div class="key" use:flyReveal>KEY 02</div>
+		<div class="key">KEY 02</div>
 		<div class="keyTitle" use:flyReveal>AI 타로 마스터의 해설</div>
 		<div class="keyDesc" use:flyReveal>
 			정통 타로 지식을 학습한 AI의 전문가급 해설
@@ -23,7 +24,7 @@
 		<div class="keyImage" use:flyReveal>이미지를 넣어주세요.</div>
 	</div>
 	<div class="keyContainer">
-		<div class="key" use:flyReveal>KEY 03</div>
+		<div class="key">KEY 03</div>
 		<div class="keyTitle" use:flyReveal>몰입감 있는 타로 경험</div>
 		<div class="keyDesc" use:flyReveal>
 			오프라인 타로처럼 생생한 연출과 그래픽 <br />카드팩을 뜯는 듯한 손맛까지
@@ -33,10 +34,16 @@
 </div>
 
 <style>
+	#line {
+		height: 150px;
+		width: 2px;
+		background-color: rgb(230, 230, 230);
+		margin: auto;
+	}
+
 	.keyContainer {
 		position: relative;
 		background-color: white;
-		padding-top: 100px;
 		padding-bottom: 60px;
 		background-color: rgb(250, 250, 250);
 	}

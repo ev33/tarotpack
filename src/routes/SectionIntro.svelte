@@ -132,7 +132,7 @@
 		display: flex;
 		margin-left: 20px;
 		margin-right: 20px;
-		margin-bottom: 100px;
+		margin-bottom: 60px;
 		position: relative;
 	}
 

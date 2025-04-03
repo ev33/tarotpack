@@ -1,7 +1,7 @@
 import { reveal } from "svelte-reveal";
 import type { Action } from "svelte/action";
 import { tweened } from "svelte/motion";
-import { cubicInOut, cubicOut } from "svelte/easing";
+import { cubicOut } from "svelte/easing";
 
 export const flyReveal: Action<HTMLElement> = (node) => {
 	let hasRevealed = false;
@@ -21,10 +21,8 @@ export const flyReveal: Action<HTMLElement> = (node) => {
 		}
 	);
 
-	// Observer 시작
 	observer.observe(node);
 
-	// `reveal` 애니메이션 설정
 	const instance = reveal(node, {
 		preset: "fly",
 		y: 30,
@@ -33,8 +31,6 @@ export const flyReveal: Action<HTMLElement> = (node) => {
 	});
 
 	function onRevealStart(node: HTMLElement) {
-		console.log("애니메이션 시작!");
-
 		const spans = node.querySelectorAll("span");
 		spans.forEach((span) => {
 			const startNumber = span.dataset.startCount ? parseInt(span.dataset.startCount, 10) : 0;
@@ -52,6 +48,29 @@ export const flyReveal: Action<HTMLElement> = (node) => {
 				count.set(endNumber);
 			}
 		});
+
+		const highlight = node.querySelector(".highlight") as HTMLElement;
+		if (highlight) {
+			updateHighlightWidth(highlight);
+
+			const resizeHandler = () => updateHighlightWidth(highlight);
+			window.addEventListener("resize", resizeHandler);
+
+			return () => {
+				window.removeEventListener("resize", resizeHandler);
+			};
+		}
+	}
+
+	function updateHighlightWidth(highlight: HTMLElement) {
+		const mobileWidth = highlight.dataset.mobileWidth ?? "100";
+		const desktopWidth = highlight.dataset.desktopWidth ?? "100";
+
+		if (window.innerWidth > 480) {
+			highlight.style.width = desktopWidth + "px";
+		} else {
+			highlight.style.width = mobileWidth + "px";
+		}
 	}
 
 	return instance as ReturnType<typeof reveal>;

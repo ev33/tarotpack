@@ -2,10 +2,12 @@
 	// @ts-ignore
 	import SectionIntro from "./SectionIntro.svelte";
 	import SectionKeys from "./SectionKeys.svelte";
+	import SectionSlogan from "./SectionSlogan.svelte";
 </script>
 
 <div id="introPage">
 	<SectionIntro />
+	<SectionSlogan />
 	<SectionKeys />
 </div>
 
