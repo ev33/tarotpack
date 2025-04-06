@@ -72,7 +72,7 @@
 
 	.keyTitle {
 		text-align: center;
-		font-size: 36px;
+		font-size: 32px;
 		font-weight: 600;
 		color: #262626;
 		margin-bottom: 6px;
@@ -80,7 +80,8 @@
 
 	#count {
 		display: inline-block;
-		width: 60px;
+		width: 50px;
+		margin-right: 3px;
 		text-align: right;
 		/* padding-right: 2px; */
 	}
@@ -116,7 +117,7 @@
 	#immersion {
 		display: inline-block;
 		height: 50px;
-		width: 93.42px;
+		width: 84.42px;
 		animation: immersion 1000ms cubic-bezier(0.4, 1.3, 0.5, 1);
 		white-space: nowrap;
 		text-align: left;
@@ -136,7 +137,7 @@
 
 	.keyDesc {
 		text-align: center;
-		font-size: 16px;
+		font-size: 15px;
 		color: #9b9b9b;
 		font-weight: 400;
 		line-height: 26px;
@@ -145,7 +146,7 @@
 	.keyImage {
 		padding-bottom: 30%;
 		background-color: #cdcdcd4e;
-		margin: 20px 60px 0px 60px;
+		margin: 20px 60px 60px 60px;
 
 		padding-top: 30%;
 		color: rgb(185, 185, 185);
@@ -158,11 +159,11 @@
 		}
 
 		.keyTitle {
-			font-size: 28px;
+			font-size: 26px;
 		}
 
 		.keyDesc {
-			font-size: 16px;
+			font-size: 15px;
 			line-height: 24px;
 		}
 
@@ -178,9 +179,14 @@
 			margin: 20px 20px 0px 20px;
 		}
 
+		#count {
+			width: 40px;
+			margin-right: 3px;
+		}
+
 		#immersion {
 			height: 39px;
-			width: 74px;
+			width: 70px;
 			animation: immersion 1000ms cubic-bezier(0.4, 1.3, 0.5, 1);
 			white-space: nowrap;
 			text-align: left;

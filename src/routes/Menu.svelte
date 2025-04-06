@@ -81,12 +81,12 @@
 				}}>무료 체험하기</button
 			>
 			<hr />
-			<button
+			<!-- <button
 				class="menuItem"
 				on:click={() => {
 					onClickItem("event");
 				}}>이벤트</button
-			>
+			> -->
 			<button
 				class="menuItem"
 				on:click={() => {

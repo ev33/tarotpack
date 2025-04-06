@@ -2,6 +2,9 @@
 	// @ts-ignore
 	import SectionIntro from "./SectionIntro.svelte";
 	import SectionKeys from "./SectionKeys.svelte";
+	import SectionPrice from "./SectionPrice.svelte";
+	import SectionReview from "./SectionReview.svelte";
+	import SectionSample from "./SectionSample.svelte";
 	import SectionSlogan from "./SectionSlogan.svelte";
 </script>
 
@@ -9,6 +12,9 @@
 	<SectionIntro />
 	<SectionSlogan />
 	<SectionKeys />
+	<SectionReview />
+	<SectionPrice />
+	<SectionSample />
 </div>
 
 <style>
