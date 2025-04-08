@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { flyReveal } from "$lib/utils/UtilReveal";
 	import Lottie from "lottie-web";
-	import { onMount } from "svelte";
+	import lottieA from "$lib/assets/lottieA.json";
+	import lottieB from "$lib/assets/lottieB.json";
+	import lottieC from "$lib/assets/lottieC.json";
 
-	let lottieA: HTMLDivElement;
-	let lottieB: HTMLDivElement;
-	let lottieC: HTMLDivElement;
+	let lottieAContainer: HTMLDivElement;
+	let lottieBContainer: HTMLDivElement;
+	let lottieCContainer: HTMLDivElement;
 
-	if (typeof window !== "undefined") {
-		onMount(() => {
-			Lottie.loadAnimation({ container: lottieA, path: "/assets/lottieA.json" });
-			Lottie.loadAnimation({ container: lottieB, path: "/assets/lottieB.json" });
-			Lottie.loadAnimation({ container: lottieC, path: "/assets/lottieC.json" });
-		});
-	}
+	$effect(() => {
+		Lottie.loadAnimation({ container: lottieAContainer, animationData: lottieA });
+		Lottie.loadAnimation({ container: lottieBContainer, animationData: lottieB });
+		Lottie.loadAnimation({ container: lottieCContainer, animationData: lottieC });
+	});
 </script>
 
 <div>
@@ -26,7 +26,7 @@
 		<div class="keyDesc" use:flyReveal>
 			87종의 카드가 만들어내는 매일 새로운 조합<br />메인 & 서브 카드와 카드 방향까지 고려
 		</div>
-		<div class="lottie" bind:this={lottieA}></div>
+		<div class="lottie" bind:this={lottieAContainer}></div>
 	</div>
 	<div class="keyContainer">
 		<div class="key">KEY 02</div>
@@ -35,7 +35,7 @@
 			정통 타로 지식을 학습한 AI의 전문가급 해설
 			<br />지금의 당신에게 꼭 맞는 조언까지
 		</div>
-		<div class="lottie" bind:this={lottieB}></div>
+		<div class="lottie" bind:this={lottieBContainer}></div>
 	</div>
 	<div class="keyContainer">
 		<div class="key">KEY 03</div>
@@ -52,7 +52,7 @@
 		<div class="keyDesc" use:flyReveal>
 			오프라인 타로처럼 생생한 연출과 그래픽 <br />카드팩을 뜯는 듯한 손맛까지
 		</div>
-		<div class="lottie2" bind:this={lottieC}></div>
+		<div class="lottie2" bind:this={lottieCContainer}></div>
 	</div>
 </div>
 
