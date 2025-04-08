@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { flyReveal } from "$lib/utils/UtilReveal";
-	import Lottie from "lottie-web";
 	import lottieA from "$lib/assets/lottieA.json";
 	import lottieB from "$lib/assets/lottieB.json";
 	import lottieC from "$lib/assets/lottieC.json";
@@ -10,7 +9,9 @@
 	let lottieBContainer: HTMLDivElement;
 	let lottieCContainer: HTMLDivElement;
 
-	onMount(() => {
+	onMount(async () => {
+		const { default: Lottie } = await import("lottie-web");
+
 		Lottie.loadAnimation({ container: lottieAContainer, animationData: lottieA });
 		Lottie.loadAnimation({ container: lottieBContainer, animationData: lottieB });
 		Lottie.loadAnimation({ container: lottieCContainer, animationData: lottieC });
