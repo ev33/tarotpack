@@ -125,7 +125,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: linear-gradient(to bottom, rgba(205, 16, 51, 0.1) 30%, rgb(205, 16, 51) 100%);
+		background: linear-gradient(to bottom, rgba(205, 16, 51, 0.2) 30%, rgb(205, 16, 51) 100%);
 	}
 
 	#mockupContainer {
@@ -221,6 +221,7 @@
 	.title span {
 		color: rgb(255, 15, 59);
 		font-family: PyeongChangPeace-Bold;
+		filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 1));
 	}
 
 	#buttons {
