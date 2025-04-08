@@ -14,10 +14,10 @@
 		/>
 	</div>
 	<div id="title" use:flyReveal>
-		지금 구매하면 매일 222원!<br />
+		지금 구독하면 매일 222원!<br />
 		부담 없는 가격으로 시작하기<br />
 	</div>
-	<div id="desc" use:flyReveal>( 한 달 결제 기준, 31일 동안 타로팩 발송 )</div>
+	<div id="desc" use:flyReveal>( 자동 결제 걱정 없이, 딱 필요한 만큼만! )</div>
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
@@ -36,7 +36,7 @@
 			</div>
 		</div>
 
-		<div id="buy">타로팩 구매하기</div>
+		<div id="buy">타로팩 구독하기</div>
 	</div>
 </div>
 
@@ -157,6 +157,7 @@
 
 		#priceCard {
 			width: 300px;
+			height: 170px;
 		}
 
 		#buy {
@@ -164,13 +165,14 @@
 		}
 
 		#month {
-			padding-top: 34px;
+			padding-top: 28px;
+			padding-bottom: 22px;
 			font-size: 20px;
 		}
 
 		#price {
 			width: 100%;
-			padding-top: 28px;
+			padding-top: 20px;
 		}
 
 		#beforePrice {
@@ -180,6 +182,10 @@
 		#afterPrice {
 			font-size: 36px;
 			line-height: 36px;
+		}
+
+		#afterPrice span {
+			font-size: 24px;
 		}
 	}
 </style>

@@ -72,7 +72,7 @@
 				class="menuItem"
 				on:click={() => {
 					onClickItem("subscribe");
-				}}>타로팩 구매</button
+				}}>타로팩 구독</button
 			>
 			<button
 				class="menuItem"
