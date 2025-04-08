@@ -4,12 +4,13 @@
 	import lottieA from "$lib/assets/lottieA.json";
 	import lottieB from "$lib/assets/lottieB.json";
 	import lottieC from "$lib/assets/lottieC.json";
+	import { onMount } from "svelte";
 
 	let lottieAContainer: HTMLDivElement;
 	let lottieBContainer: HTMLDivElement;
 	let lottieCContainer: HTMLDivElement;
 
-	$effect(() => {
+	onMount(() => {
 		Lottie.loadAnimation({ container: lottieAContainer, animationData: lottieA });
 		Lottie.loadAnimation({ container: lottieBContainer, animationData: lottieB });
 		Lottie.loadAnimation({ container: lottieCContainer, animationData: lottieC });
