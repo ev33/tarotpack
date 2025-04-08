@@ -6,11 +6,14 @@
 	let lottieA: HTMLDivElement;
 	let lottieB: HTMLDivElement;
 	let lottieC: HTMLDivElement;
-	onMount(() => {
-		Lottie.loadAnimation({ container: lottieA, path: "/assets/lottieA.json" });
-		Lottie.loadAnimation({ container: lottieB, path: "/assets/lottieB.json" });
-		Lottie.loadAnimation({ container: lottieC, path: "/assets/lottieC.json" });
-	});
+
+	if (typeof window !== "undefined") {
+		onMount(() => {
+			Lottie.loadAnimation({ container: lottieA, path: "/assets/lottieA.json" });
+			Lottie.loadAnimation({ container: lottieB, path: "/assets/lottieB.json" });
+			Lottie.loadAnimation({ container: lottieC, path: "/assets/lottieC.json" });
+		});
+	}
 </script>
 
 <div>
