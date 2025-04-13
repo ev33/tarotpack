@@ -10,7 +10,7 @@
 			icon="tabler:rosette-discount-filled"
 			width="100%"
 			color="#ffff00"
-			style="filter: drop-shadow(0px 0px 40px rgba(255, 255, 255, 0.4));"
+			style="filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.2));"
 		/>
 	</div>
 	<div id="title" use:flyReveal>
@@ -74,7 +74,6 @@
 		height: 190px;
 		background-color: rgb(250, 250, 250);
 		border-radius: 20px;
-		filter: drop-shadow(0px 0px 40px rgba(255, 255, 255, 0.2));
 		cursor: pointer;
 	}
 

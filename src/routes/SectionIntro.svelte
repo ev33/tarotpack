@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { gotoPage } from "$lib/utils/UtilPage";
+	import { gotoPage, gotoSample } from "$lib/utils/UtilPage";
 	import { onDestroy, onMount } from "svelte";
 	import mockup from "$lib/assets/mockup.png";
 
@@ -78,7 +78,7 @@
 		<button
 			id="leftButton"
 			on:click={() => {
-				gotoPage("sample");
+				gotoSample();
 			}}>타로팩 체험하기</button
 		><button
 			id="rightButton"
@@ -102,7 +102,7 @@
 <style>
 	#S1Banner {
 		padding: 20% 0px 0px 0px;
-		background-color: rgb(205, 16, 51);
+		background-color: rgb(205, 16, 51); /* #cd1033 */
 		color: rgb(255, 255, 255);
 		overflow: hidden;
 	}
@@ -221,7 +221,7 @@
 	.title span {
 		color: rgb(255, 15, 59);
 		font-family: PyeongChangPeace-Bold;
-		filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 1));
+		filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 1));
 	}
 
 	#buttons {

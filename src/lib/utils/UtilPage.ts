@@ -11,3 +11,13 @@ export const gotoRootPage = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	}
 };
+
+export const gotoSample = () => {
+	if (
+		confirm(
+			"[타로팩 카카오톡 채널 메뉴] - [무료 타로팩 받기]를 누르시면 무료 타로팩을 받아볼 수 있어요."
+		)
+	) {
+		window.open("http://pf.kakao.com/_rQZwn");
+	}
+};

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { gotoPage } from "$lib/utils/UtilPage";
+	import { gotoPage, gotoSample } from "$lib/utils/UtilPage";
 	import { flyReveal } from "$lib/utils/UtilReveal";
 </script>
 
@@ -12,7 +12,7 @@
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<span
 			on:click={() => {
-				gotoPage("sample");
+				gotoSample();
 			}}>무료 <span>타로팩</span> 받기</span
 		>
 	</div>

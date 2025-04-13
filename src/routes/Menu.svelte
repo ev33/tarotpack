@@ -4,6 +4,7 @@
 	import Icon from "@iconify/svelte";
 	import { goto } from "$app/navigation";
 	import { backIn } from "svelte/easing";
+	import { gotoSample } from "$lib/utils/UtilPage";
 
 	export let isMenuOpen: Writable<boolean>;
 	let isShowMailCopied: boolean = false;
@@ -72,12 +73,12 @@
 				class="menuItem"
 				on:click={() => {
 					onClickItem("subscribe");
-				}}>타로팩 구독</button
+				}}>타로팩 구독하기</button
 			>
 			<button
 				class="menuItem"
 				on:click={() => {
-					onClickItem("sample");
+					gotoSample();
 				}}>무료 체험하기</button
 			>
 			<hr />
@@ -156,7 +157,7 @@
 		display: flex;
 		align-items: center;
 		padding-left: 20px;
-		color: #2f2f2f;
+		color: #262626;
 		font-weight: 400;
 		cursor: pointer;
 	}
@@ -198,9 +199,9 @@
 
 	#policy {
 		margin-top: 20px;
-		font-size: 10px;
+		font-size: 11px;
 		margin-left: 20px;
-		color: rgb(170, 170, 170);
+		color: #9b9b9b;
 		font-weight: 500;
 	}
 </style>

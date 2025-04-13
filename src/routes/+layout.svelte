@@ -11,6 +11,8 @@
 	let isMenuOpen = writable(false);
 
 	onMount(() => {
+		window.scroll(0, 0);
+
 		isMenuOpen.subscribe((value) => {
 			document.body.style.overflow = value ? "hidden" : "";
 		});
