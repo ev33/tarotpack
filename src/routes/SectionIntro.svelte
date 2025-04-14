@@ -212,46 +212,46 @@
 	}
 
 	#card0 {
-		background-image: url("card_small/0_small.png");
+		background-image: url("/card_small/0_small.png");
 	}
 	#card1 {
-		background-image: url("card_small/1_small.png");
+		background-image: url("/card_small/1_small.png");
 	}
 	#card2 {
-		background-image: url("card_small/2_small.png");
+		background-image: url("/card_small/2_small.png");
 	}
 	#card3 {
-		background-image: url("card_small/3_small.png");
+		background-image: url("/card_small/3_small.png");
 	}
 	#card4 {
-		background-image: url("card_small/4_small.png");
+		background-image: url("/card_small/4_small.png");
 	}
 	#card5 {
-		background-image: url("card_small/5_small.png");
+		background-image: url("/card_small/5_small.png");
 	}
 	#card6 {
-		background-image: url("card_small/6_small.png");
+		background-image: url("/card_small/6_small.png");
 	}
 	#card7 {
-		background-image: url("card_small/7_small.png");
+		background-image: url("/card_small/7_small.png");
 	}
 	#card8 {
-		background-image: url("card_small/8_small.png");
+		background-image: url("/card_small/8_small.png");
 	}
 	#card9 {
-		background-image: url("card_small/9_small.png");
+		background-image: url("/card_small/9_small.png");
 	}
 	#card10 {
-		background-image: url("card_small/10_small.png");
+		background-image: url("/card_small/10_small.png");
 	}
 	#card11 {
-		background-image: url("card_small/11_small.png");
+		background-image: url("/card_small/11_small.png");
 	}
 	#card13 {
-		background-image: url("card_small/13_small.png");
+		background-image: url("/card_small/13_small.png");
 	}
 	#card14 {
-		background-image: url("card_small/14_small.png");
+		background-image: url("/card_small/14_small.png");
 	}
 
 	.title {
