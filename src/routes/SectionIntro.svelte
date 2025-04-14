@@ -55,22 +55,22 @@
 	<div class="title">매일 <span>타로팩</span>으로<br />점치는 특별한 운세</div>
 	<div id="marqueeContainer">
 		<div class="marquee" bind:this={marquee1}>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
+			<div id="card0" class="tarotCard"></div>
+			<div id="card1" class="tarotCard"></div>
+			<div id="card2" class="tarotCard"></div>
+			<div id="card3" class="tarotCard"></div>
+			<div id="card4" class="tarotCard"></div>
+			<div id="card5" class="tarotCard"></div>
+			<div id="card6" class="tarotCard"></div>
 		</div>
 		<div class="marquee" bind:this={marquee2}>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
-			<div class="tarotCard"></div>
+			<div id="card7" class="tarotCard"></div>
+			<div id="card8" class="tarotCard"></div>
+			<div id="card9" class="tarotCard"></div>
+			<div id="card10" class="tarotCard"></div>
+			<div id="card11" class="tarotCard"></div>
+			<div id="card13" class="tarotCard"></div>
+			<div id="card14" class="tarotCard"></div>
 		</div>
 	</div>
 
@@ -200,14 +200,58 @@
 	.tarotCard {
 		width: 70px;
 		height: 120px;
-		background-color: rgb(255, 255, 255);
+		/* background-color: rgb(255, 255, 255); */
 		margin: 40px 14px 44px 14px;
-		box-shadow: rgba(255, 74, 107, 0.466) 0px 0px 10px;
+		box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 18px;
 		bottom: 0;
 		flex-grow: 0;
 		flex-shrink: 0;
 		flex-basis: auto;
-		border-radius: 10px;
+		border-radius: 13px;
+		background-size: cover;
+	}
+
+	#card0 {
+		background-image: url("card_small/0_small.png");
+	}
+	#card1 {
+		background-image: url("card_small/1_small.png");
+	}
+	#card2 {
+		background-image: url("card_small/2_small.png");
+	}
+	#card3 {
+		background-image: url("card_small/3_small.png");
+	}
+	#card4 {
+		background-image: url("card_small/4_small.png");
+	}
+	#card5 {
+		background-image: url("card_small/5_small.png");
+	}
+	#card6 {
+		background-image: url("card_small/6_small.png");
+	}
+	#card7 {
+		background-image: url("card_small/7_small.png");
+	}
+	#card8 {
+		background-image: url("card_small/8_small.png");
+	}
+	#card9 {
+		background-image: url("card_small/9_small.png");
+	}
+	#card10 {
+		background-image: url("card_small/10_small.png");
+	}
+	#card11 {
+		background-image: url("card_small/11_small.png");
+	}
+	#card13 {
+		background-image: url("card_small/13_small.png");
+	}
+	#card14 {
+		background-image: url("card_small/14_small.png");
 	}
 
 	.title {
